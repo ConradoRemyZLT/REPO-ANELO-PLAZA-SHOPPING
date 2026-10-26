@@ -1,0 +1,90 @@
+{
+  "_comentario": "Fuente de datos del sitio. Editar acá y correr build.py. Todo lo marcado 'pendiente' está a confirmar por ZLT.",
+  "contacto": {
+    "telefonos": ["+54 9 3416 04-3533", "+54 9 2996 31-5814"],
+    "whatsapp": "5493416043533",
+    "email": "shopping_info@añeloplazashopping.com",
+    "dominio": "añeloplazashopping.com.ar",
+    "_nota": "Datos tomados del brochure comercial 2026. La web actual en Wix muestra info@somoszlt.com y +54 9 341 316 5100: confirmar cuáles quedan."
+  },
+  "ubicacion": {
+    "lat": -38.3536,
+    "lng": -68.7877,
+    "aproximada": true,
+    "_nota": "Coordenada APROXIMADA (centro urbano de Añelo). Reemplazar por la exacta del predio (Calle Los Loros / Los Gorriones / A° Domuyo / Los Cisnes)."
+  },
+  "links": {
+    "video_oficial_youtube_id": "",
+    "avance_obra_youtube_id": "",
+    "instagram": "",
+    "_nota": "Si se completa un ID de YouTube, aparece el botón correspondiente y la miniatura real del video."
+  },
+  "obra": {
+    "estado_general": "construccion",
+    "actualizado": "2026-07",
+    "modulos": [
+      {"modulo": 1, "lote": 10, "entrega": "2026-11", "estado": "proxima"},
+      {"modulo": 2, "lote": 4, "entrega": "2027-03", "estado": "programada"},
+      {"modulo": 3, "lote": 11, "entrega": "2027-09", "estado": "programada"},
+      {"modulo": 4, "lote": 3, "entrega": "2028-03", "estado": "programada"}
+    ]
+  },
+  "lotes": [
+    {"lote": 3, "locales": 17, "min": 29.4, "max": 222.4, "sector": "gastro"},
+    {"lote": 4, "locales": 9, "min": 36.6, "max": 218.1, "sector": "servicios"},
+    {"lote": 10, "locales": 12, "min": 34.8, "max": 68.5, "sector": "cercania"},
+    {"lote": 11, "locales": 11, "min": 34.8, "max": 382, "sector": "institucional"}
+  ],
+  "_unidades_nota": "Inventario relevado de los planos del brochure 2026. 'm2' queda vacío hasta tener la planilla de superficies por local. 'estado': consultar | disponible | reservado | vendido | alquilado.",
+  "unidades": [
+    {"lote": 3, "n": 1, "planta": "PB", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 2, "planta": "PB", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 3, "planta": "PB", "tipo": "G", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 4, "planta": "PB", "tipo": "1A", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 5, "planta": "PB", "tipo": "1A", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 6, "planta": "PB", "tipo": "1B", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 7, "planta": "PB", "tipo": "1A", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 8, "planta": "PB", "tipo": "1A", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 9, "planta": "PB", "tipo": "1A", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 10, "planta": "PA", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 11, "planta": "PA", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 12, "planta": "PA", "tipo": "1A", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 13, "planta": "PA", "tipo": "1A", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 14, "planta": "PA", "tipo": "1B", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 15, "planta": "PA", "tipo": "1A", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 16, "planta": "PA", "tipo": "1A", "m2": null, "estado": "consultar"},
+    {"lote": 3, "n": 17, "planta": "PA", "tipo": "1A", "m2": null, "estado": "consultar"},
+    {"lote": 4, "n": 1, "planta": "PB", "tipo": "2A", "m2": null, "estado": "consultar"},
+    {"lote": 4, "n": 2, "planta": "PB", "tipo": "2A", "m2": null, "estado": "consultar"},
+    {"lote": 4, "n": 3, "planta": "PB", "tipo": "G", "m2": null, "estado": "consultar"},
+    {"lote": 4, "n": 4, "planta": "PB", "tipo": "2B", "m2": null, "estado": "consultar"},
+    {"lote": 4, "n": 5, "planta": "PB", "tipo": "3", "m2": null, "estado": "consultar"},
+    {"lote": 4, "n": 6, "planta": "PA", "tipo": "2A", "m2": null, "estado": "consultar"},
+    {"lote": 4, "n": 7, "planta": "PA", "tipo": "2A", "m2": null, "estado": "consultar"},
+    {"lote": 4, "n": 8, "planta": "PA", "tipo": "2B", "m2": null, "estado": "consultar"},
+    {"lote": 4, "n": 9, "planta": "PA", "tipo": "3", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 1, "planta": "PB", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 2, "planta": "PB", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 3, "planta": "PB", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 4, "planta": "PB", "tipo": "3", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 5, "planta": "PB", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 6, "planta": "PB", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 7, "planta": "PA", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 8, "planta": "PA", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 9, "planta": "PA", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 10, "planta": "PA", "tipo": "3", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 11, "planta": "PA", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 10, "n": 12, "planta": "PA", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 1, "planta": "PB", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 2, "planta": "PB", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 3, "planta": "PB", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 4, "planta": "PB", "tipo": "3A", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 5, "planta": "PB", "tipo": "3A", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 6, "planta": "PB", "tipo": "B", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 7, "planta": "PA", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 8, "planta": "PA", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 9, "planta": "PA", "tipo": "2", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 10, "planta": "PA", "tipo": "3A", "m2": null, "estado": "consultar"},
+    {"lote": 11, "n": 11, "planta": "PA", "tipo": "3A", "m2": null, "estado": "consultar"}
+  ]
+}

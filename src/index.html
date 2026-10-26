@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Añelo Plaza Shopping · El primer shopping a cielo abierto de Añelo</title>
+<meta name="description" content="Añelo Plaza Shopping: el primer shopping a cielo abierto de Añelo, Vaca Muerta. 49 locales comerciales en venta y alquiler, gastronomía, servicios y encuentro. Desarrolla ZLT.">
+{{meta_robots}}
+<meta name="theme-color" content="#FBFAF5">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Añelo Plaza Shopping">
+<meta property="og:description" content="Un paseo, mil experiencias. El primer shopping a cielo abierto de Añelo, Vaca Muerta.">
+<meta property="og:locale" content="es_AR">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="icon" href="{{favicon}}">
+<script type="application/ld+json">{{jsonld}}</script>
+<style>{{leaflet_css}}</style>
+<style>{{css}}</style>
+</head>
+<body class="no-anim">
+{{sprites}}
+
+<!-- ================= BARRA ================= -->
+<header class="bar" id="bar">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Añelo Plaza Shopping — inicio">
+      {{logo:op2:6:lg-light}}{{logo:op2:5:lg-dark}}
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#proyecto"><span class="l-es">Proyecto</span><span class="l-en">Project</span></a>
+      <a href="#locales"><span class="l-es">Locales</span><span class="l-en">Units</span></a>
+      <a href="#obra"><span class="l-es">Avance de obra</span><span class="l-en">Progress</span></a>
+      <a href="#ubicacion"><span class="l-es">Ubicación</span><span class="l-en">Location</span></a>
+      <a href="#contacto"><span class="l-es">Contacto</span><span class="l-en">Contact</span></a>
+    </nav>
+    <div class="bar-right">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-solid btn-brochure" href="#brochure"><span class="l-es">Brochure</span><span class="l-en">Brochure</span></a>
+      <button class="burger" type="button" id="burger" aria-label="Menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <a href="#proyecto"><span class="l-es">Proyecto</span><span class="l-en">Project</span></a>
+  <a href="#anelo"><span class="l-es">Añelo</span><span class="l-en">Añelo</span></a>
+  <a href="#locales"><span class="l-es">Locales</span><span class="l-en">Units</span></a>
+  <a href="#rubros"><span class="l-es">Rubros</span><span class="l-en">Categories</span></a>
+  <a href="#obra"><span class="l-es">Avance de obra</span><span class="l-en">Construction progress</span></a>
+  <a href="#ubicacion"><span class="l-es">Ubicación</span><span class="l-en">Location</span></a>
+  <a href="#brochure"><span class="l-es">Brochure</span><span class="l-en">Brochure</span></a>
+  <a href="#contacto"><span class="l-es">Contacto</span><span class="l-en">Contact</span></a>
+</div>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="hero-media" id="heroMedia">
+    <img data-img="renders/aerea-conjunto" data-eager alt="Vista aérea de Añelo Plaza Shopping" class="on">
+    <img data-img="renders/ext-5" alt="Fachada de Añelo Plaza Shopping al atardecer">
+    <img data-img="renders/gastronomia-exterior" alt="Sector gastronómico con terraza">
+    <img data-img="renders/ext-3" alt="Paseo comercial a cielo abierto">
+  </div>
+  <div class="hero-dots" id="heroDots"></div>
+  <div class="wrap hero-in">
+    <div class="hero-logo">{{logo:op3:2:}}</div>
+    <h1>
+      <span class="l-es"><span class="thin">El primer shopping</span><span class="bold">a cielo abierto de Añelo</span></span>
+      <span class="l-en"><span class="thin">Añelo's first</span><span class="bold">open-air shopping center</span></span>
+    </h1>
+    <p>
+      <span class="l-es">Comercio, gastronomía, servicios y encuentro en el corazón de Vaca Muerta, la ciudad de mayor crecimiento de Argentina.</span>
+      <span class="l-en">Retail, dining, services and gathering spaces in the heart of Vaca Muerta, Argentina's fastest-growing city.</span>
+    </p>
+    <div class="btns">
+      <a class="btn btn-light" href="#locales"><span class="l-es">Ver locales</span><span class="l-en">See units</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost on-dark" href="#brochure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span class="l-es">Descargar brochure</span><span class="l-en">Download brochure</span></a>
+    </div>
+    <div class="hero-stats">
+      <div><b>49</b><span class="l-es">Locales comerciales</span><span class="l-en">Retail units</span></div>
+      <div><b>4</b><span class="l-es">Lotes · sectores</span><span class="l-en">Lots · sectors</span></div>
+      <div><b>2</b><span class="l-es">Niveles</span><span class="l-en">Levels</span></div>
+      <div><b>29–382</b><span class="l-es">m² por local</span><span class="l-en">m² per unit</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EL PROYECTO (ficha ZLT-WEB-V2) ================= -->
+<section class="sec leaf-bg" id="proyecto">
+  <div class="wrap">
+    <div class="phead-top rv">
+      <span class="eyebrow"><span class="l-es">Retail · Paseo comercial</span><span class="l-en">Retail · Open-air mall</span></span>
+      <span class="pstatus"><span class="tag tag-adv"><span class="l-es">En construcción</span><span class="l-en">Under construction</span></span></span>
+      <h2 class="ptitle sr-only">Añelo Plaza Shopping</h2>
+      <div class="plogo-box">{{logo:op3:1:}}</div>
+      <p class="pplace">{{ico:pin}}<span class="l-es">Centro urbano de Añelo · Neuquén · Argentina</span><span class="l-en">Downtown Añelo · Neuquén · Argentina</span></p>
+    </div>
+    <div class="pbody">
+      <div class="rv">
+        <p class="lead">
+          <span class="l-es">Concebido como una <b>construcción premium que eleva el estándar urbano</b> de la ciudad, Añelo Plaza Shopping trae una oferta de servicios, gastronomía y retail <b>inexistente en la región</b>, y da respuesta a una población ya instalada que hoy no cuenta con espacios de consumo y encuentro.</span>
+          <span class="l-en">Conceived as a <b>premium development that raises the city's urban standard</b>, Añelo Plaza Shopping brings a mix of services, dining and retail <b>that does not yet exist in the region</b>, serving a resident population that today lacks places to shop and meet.</span>
+        </p>
+        <p class="txt" style="margin-top:14px">
+          <span class="l-es">En un contexto de crecimiento acelerado, organiza y activa la vida social, consolidándose como el nuevo punto de referencia urbano en el corazón de Vaca Muerta.</span>
+          <span class="l-en">In a context of rapid growth, it organizes and activates social life, becoming the new urban landmark in the heart of Vaca Muerta.</span>
+        </p>
+        <div class="kpis">
+          <div><b>49</b><span class="l-es">locales comerciales</span><span class="l-en">retail units</span></div>
+          <div><b>4</b><span class="l-es">sectores temáticos</span><span class="l-en">themed sectors</span></div>
+          <div><b>2028</b><span class="l-es">finalización del último módulo</span><span class="l-en">last module completion</span></div>
+        </div>
+        <div class="chips">
+          <span class="chip"><span class="l-es">A cielo abierto</span><span class="l-en">Open-air</span></span>
+          <span class="chip"><span class="l-es">Dos niveles</span><span class="l-en">Two levels</span></span>
+          <span class="chip"><span class="l-es">Gastronomía</span><span class="l-en">Dining</span></span>
+          <span class="chip"><span class="l-es">Servicios y oficinas</span><span class="l-en">Services &amp; offices</span></span>
+          <span class="chip"><span class="l-es">Estacionamiento</span><span class="l-en">Parking</span></span>
+          <span class="chip"><span class="l-es">Vigilancia</span><span class="l-en">Surveillance</span></span>
+          <span class="chip"><span class="l-es">Locales escriturables</span><span class="l-en">Titled units</span></span>
+          <span class="chip"><span class="l-es">Venta y alquiler</span><span class="l-en">Sale &amp; lease</span></span>
+        </div>
+        <div class="btns">
+          <a class="btn btn-ghost" href="#brochure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span class="l-es">Brochure</span><span class="l-en">Brochure</span></a>
+          {{btn_video}}
+          <a class="btn btn-ghost" href="#obra"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span class="l-es">Avance de obra</span><span class="l-en">Construction progress</span></a>
+        </div>
+        <div class="credits">
+          <div class="cr-zlt"><small><span class="l-es">Desarrolla y administra</span><span class="l-en">Developed &amp; managed by</span></small><img src="{{img:logos/zlt.png}}" alt="ZLT Negocios Rentables"></div>
+          <div><small><span class="l-es">Construye</span><span class="l-en">Built by</span></small><img src="{{img:logos/roque-mocciola.png}}" alt="Roque Mocciola"></div>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="gal" data-gal>
+          <div class="gtrack">
+            <figure class="gslide"><img data-img="renders/ext-7" alt="Vista aérea de los lotes 3 y 4"></figure>
+            <figure class="gslide"><img data-img="renders/ext-4" alt="Fachada con galería en planta alta"></figure>
+            <figure class="gslide"><img data-img="renders/fachada-ciclovia" alt="Fachada vidriada sobre la ciclovía"></figure>
+            <figure class="gslide"><img data-img="renders/ext-1" alt="Sector gastronómico con terraza"></figure>
+            <figure class="gslide"><img data-img="renders/ext-0" alt="Edificio institucional del lote 11"></figure>
+            <figure class="gslide"><img data-img="renders/ext-6" alt="Paseo comercial"></figure>
+          </div>
+        </div>
+        <p class="note"><span class="l-es">Imágenes ilustrativas, no contractuales.</span><span class="l-en">Illustrative images, non-binding.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AÑELO ================= -->
+<section class="sec alt glow-bg" id="anelo">
+  <div class="wrap">
+    <div class="ctx-grid">
+      <div class="rv">
+        <span class="eyebrow"><span class="l-es">El contexto</span><span class="l-en">The context</span></span>
+        <h2 class="h-sec" style="margin:14px 0 22px">
+          <span class="l-es"><span class="thin">El nuevo</span><span class="bold">centro de Añelo</span></span>
+          <span class="l-en"><span class="thin">Añelo's new</span><span class="bold">city center</span></span>
+        </h2>
+        <p class="lead">
+          <span class="l-es">Añelo es el <b>corazón estratégico de Vaca Muerta</b> y uno de los núcleos de desarrollo más dinámicos del país. El shopping se desarrolla en el <b>núcleo del casco urbano</b>, sobre el plan de ordenamiento territorial diseñado por YPF: el nuevo epicentro de la ciudad.</span>
+          <span class="l-en">Añelo is the <b>strategic heart of Vaca Muerta</b> and one of the country's most dynamic growth hubs. The shopping center sits <b>at the core of the urban area</b>, within the land-use plan designed by YPF: the city's new epicenter.</span>
+        </p>
+        <div class="stats">
+          <div class="stat"><b>+4.000</b><span class="l-es">personas proyectadas en un radio de 200 m para 2027</span><span class="l-en">people projected within a 200 m radius by 2027</span></div>
+          <div class="stat"><b>+10.000</b><span class="l-es">camas proyectadas para 2028 en el entorno inmediato</span><span class="l-en">hotel and lodging beds projected nearby by 2028</span></div>
+          <div class="stat"><b style="font-size:22px;line-height:1.15"><span class="l-es">Añelo Urbano</span><span class="l-en">Urban Añelo</span></b><span class="l-es">plazas, espacios verdes y el nuevo Concejo Deliberante en desarrollo</span><span class="l-en">squares, green spaces and the new City Council under development</span></div>
+        </div>
+        <p class="note"><span class="l-es">Miles de personas circulan a diario sin oferta comercial cercana: hoy ese consumo migra hacia otras localidades.</span><span class="l-en">Thousands of people pass through every day with no nearby retail offer: that spending currently leaves for other towns.</span></p>
+      </div>
+      <figure class="ctx-img rv"><img data-img="renders/ext-2" alt="Añelo Plaza Shopping sobre la avenida"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROPUESTA DE VALOR ================= -->
+<section class="sec dark" id="propuesta">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="l-es">Propuesta de valor</span><span class="l-en">Value proposition</span></span>
+      <h2 class="h-sec">
+        <span class="l-es"><span class="thin">Rentabilidad estratégica</span><span class="bold">en un mercado sin competencia</span></span>
+        <span class="l-en"><span class="thin">Strategic returns</span><span class="bold">in a market with no competition</span></span>
+      </h2>
+      <p class="txt"><span class="l-es">Las inversiones privadas en Vaca Muerta se concentraron en vivienda para operarios. La renta comercial estructurada es una categoría nueva, con alto potencial de ocupación, flujo y posicionamiento temprano.</span><span class="l-en">Private investment in Vaca Muerta has focused on worker housing. Structured commercial income is a new category, with strong potential for occupancy, foot traffic and early positioning.</span></p>
+    </div>
+    <div class="pillars">
+      <article class="pillar rv"><div class="num">01</div><h3><span class="l-es">Demanda existente insatisfecha</span><span class="l-en">Existing, unmet demand</span></h3><p><span class="l-es">La población demanda servicios que hoy no existen en el formato ni en la escala adecuados.</span><span class="l-en">Residents need services that do not exist today in the right format or scale.</span></p></article>
+      <article class="pillar rv"><div class="num">02</div><h3><span class="l-es">Ubicación estratégica</span><span class="l-en">Strategic location</span></h3><p><span class="l-es">Dentro del área de ordenamiento territorial definida para el sector central de Añelo.</span><span class="l-en">Within the land-use area defined for Añelo's central district.</span></p></article>
+      <article class="pillar rv"><div class="num">03</div><h3><span class="l-es">Activo con identidad propia</span><span class="l-en">An asset with its own identity</span></h3><p><span class="l-es">Se adquiere una unidad dentro de un shopping administrado, con marca, presencia digital y operación centralizada.</span><span class="l-en">You acquire a unit inside a managed shopping center, with a brand, digital presence and centralized operation.</span></p></article>
+    </div>
+
+    <h3 class="subhead rv"><span class="l-es"><span class="thin">Condiciones </span><span class="bold">comerciales</span></span><span class="l-en"><span class="thin">Commercial </span><span class="bold">terms</span></span></h3>
+    <div class="cond" style="margin-top:24px">
+      <div class="rv"><div class="num">01</div><h4><span class="l-es">Gestión unificada del predio</span><span class="l-en">Unified property management</span></h4><p><span class="l-es">Mantenimiento permanente en condiciones óptimas y <b>diversidad de rubros</b> entre las empresas radicadas.</span><span class="l-en">Ongoing maintenance in optimal condition and a <b>diverse tenant mix</b>.</span></p></div>
+      <div class="rv"><div class="num">02</div><h4><span class="l-es">Modalidades comerciales</span><span class="l-en">Commercial options</span></h4><p><span class="l-es">Los locales se pueden <b>alquilar</b> o <b>comprar</b>, según la modalidad que mejor se adapte a cada empresa.</span><span class="l-en">Units can be <b>leased</b> or <b>purchased</b>, whichever best suits each business.</span></p></div>
+      <div class="rv"><div class="num">03</div><h4><span class="l-es">Cronograma de entrega</span><span class="l-en">Delivery schedule</span></h4><p><span class="l-es">Cuatro módulos con entregas entre <b>noviembre 2026</b> y <b>marzo 2028</b>. <a href="#obra" style="text-decoration:underline">Ver cronograma</a></span><span class="l-en">Four modules delivered between <b>November 2026</b> and <b>March 2028</b>. <a href="#obra" style="text-decoration:underline">See schedule</a></span></p></div>
+      <div class="rv"><div class="num">04</div><h4><span class="l-es">Seguridad jurídica</span><span class="l-en">Legal certainty</span></h4><p><span class="l-es"><b>Locales escriturables:</b> cada unidad se inscribe a nombre del comprador, con pleno respaldo legal sobre la propiedad.</span><span class="l-en"><b>Titled units:</b> each unit is registered in the buyer's name, with full legal ownership.</span></p></div>
+    </div>
+
+    <h3 class="subhead rv"><span class="l-es"><span class="thin">Más que locales: </span><span class="bold">logística y flexibilidad</span></span><span class="l-en"><span class="thin">More than units: </span><span class="bold">logistics &amp; flexibility</span></span></h3>
+    <div class="cond" style="margin-top:24px">
+      <div class="rv"><div class="num">01</div><h4><span class="l-es">Depósito, picking y logística</span><span class="l-en">Storage, picking &amp; logistics</span></h4><p><span class="l-es">En el <b>Parque Industrial Vaca Muerta</b> las empresas pueden alquilar posiciones para guardar mercadería. El shopping se encarga del <b>picking</b> y del traslado hasta el local.</span><span class="l-en">At <b>Parque Industrial Vaca Muerta</b> tenants can rent storage positions. The shopping center handles <b>picking</b> and delivery to the store.</span></p></div>
+      <div class="rv"><div class="num">02</div><h4><span class="l-es">Flexibilidad de layout</span><span class="l-en">Layout flexibility</span></h4><p><span class="l-es">Los locales de los bloques aún no construidos se adaptan a las <b>necesidades específicas</b> de cada empresa, respetando las bases del proyecto. Los locales pueden combinarse para formar espacios mayores. El <b>Lote 10</b> ya se entrega con su diseño definido.</span><span class="l-en">Units in blocks not yet built can be adapted to each company's <b>specific needs</b>, within the project's guidelines. Units can be combined into larger spaces. <b>Lot 10</b> is delivered with its final design.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCALES ================= -->
+<section class="sec" id="locales">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="l-es">Locales disponibles</span><span class="l-en">Available units</span></span>
+      <h2 class="h-sec">
+        <span class="l-es"><span class="thin">49 locales</span><span class="bold">en 4 sectores</span></span>
+        <span class="l-en"><span class="thin">49 units</span><span class="bold">in 4 sectors</span></span>
+      </h2>
+      <p class="txt"><span class="l-es">De 29 m² a 382 m², en planta baja y planta alta. Elegí un sector para ver sus planos y sus locales.</span><span class="l-en">From 29 m² to 382 m², on ground and upper floors. Pick a sector to see its plans and units.</span></p>
+    </div>
+    <div class="lotes rv" id="lotes"></div>
+
+    <div class="plans">
+      <div class="plan-card rv">
+        <div class="plan-tools">
+          <div class="seg" id="planSet">
+            <button type="button" data-set="3-4" aria-pressed="true"><span class="l-es">Lotes 3 y 4</span><span class="l-en">Lots 3 &amp; 4</span></button>
+            <button type="button" data-set="10-11" aria-pressed="false"><span class="l-es">Lotes 10 y 11</span><span class="l-en">Lots 10 &amp; 11</span></button>
+          </div>
+          <div class="seg" id="planFloor">
+            <button type="button" data-floor="planta-baja" aria-pressed="true"><span class="l-es">Planta baja</span><span class="l-en">Ground floor</span></button>
+            <button type="button" data-floor="planta-alta" aria-pressed="false"><span class="l-es">Planta alta</span><span class="l-en">Upper floor</span></button>
+          </div>
+        </div>
+        <div class="plan-img" id="planImg"><img id="planPic" alt="Plano de locales"></div>
+        <p class="plan-cap" id="planCap"></p>
+      </div>
+      <div class="rv">
+        <span class="eyebrow"><span class="l-es">Tipologías</span><span class="l-en">Unit types</span></span>
+        <div class="tipos" id="tipos" style="margin-top:14px"></div>
+        <p class="note"><span class="l-es">La nomenclatura corresponde a los planos del proyecto. Superficie exacta de cada local, a consultar.</span><span class="l-en">Type codes follow the project plans. Exact area of each unit available on request.</span></p>
+      </div>
+    </div>
+
+    <div class="units-head">
+      <h3><span class="l-es"><span class="thin">Listado de </span><span class="bold">locales</span></span><span class="l-en"><span class="thin">Unit </span><span class="bold">list</span></span></h3>
+      <div class="filters">
+        <select id="fLote" aria-label="Lote"></select>
+        <select id="fPlanta" aria-label="Planta"></select>
+        <select id="fTipo" aria-label="Tipología"></select>
+      </div>
+    </div>
+    <p class="ucount" id="uCount" style="margin-bottom:14px"></p>
+    <div class="units" id="units"></div>
+    <div style="text-align:center;margin-top:22px"><button class="btn btn-ghost" type="button" id="uMore"></button></div>
+  </div>
+</section>
+
+<!-- ================= RUBROS ================= -->
+<section class="sec alt leaf-bg" id="rubros">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="l-es">Mix comercial</span><span class="l-en">Tenant mix</span></span>
+      <h2 class="h-sec"><span class="l-es"><span class="bold">Rubros aptos</span></span><span class="l-en"><span class="bold">Suitable categories</span></span></h2>
+    </div>
+    <div class="rubros rv">
+      {{rubros}}
+    </div>
+    <div class="servs rv">
+      {{servicios}}
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESTADO DE OBRA ================= -->
+<section class="sec dark" id="obra">
+  <div class="wrap">
+    <div class="obra-top rv">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow"><span class="l-es">Estado de obra</span><span class="l-en">Construction status</span></span>
+        <h2 class="h-sec"><span class="l-es"><span class="thin">Avance</span><span class="bold">de obra</span></span><span class="l-en"><span class="thin">Construction</span><span class="bold">progress</span></span></h2>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+        <span class="tag tag-adv" style="color:#B9C6CD"><span class="l-es">En construcción</span><span class="l-en">Under construction</span></span>
+        <span class="note" style="margin:0" id="obraUpd"></span>
+      </div>
+    </div>
+    <div class="timeline" id="timeline"></div>
+    <div class="obra-gal rv">
+      <span class="eyebrow"><span class="l-es">Registro fotográfico</span><span class="l-en">Photo log</span></span>
+      <div class="obra-tabs" id="obraTabs"></div>
+      <div class="obra-grid" id="obraGrid">
+        {{obra_fotos}}
+      </div>
+      {{btn_avance}}
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERÍA ================= -->
+<section class="sec" id="galeria">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="l-es">Galería</span><span class="l-en">Gallery</span></span>
+      <h2 class="h-sec"><span class="l-es"><span class="thin">Un paseo,</span><span class="bold">mil experiencias</span></span><span class="l-en"><span class="thin">One walk,</span><span class="bold">a thousand experiences</span></span></h2>
+    </div>
+    <div class="mosaic rv" id="mosaic">
+      <figure class="w4 h2"><img data-img="renders/ext-5" alt="Fachada principal"></figure>
+      <figure class="w2"><img data-img="renders/interior-fitness" alt="Interior: gimnasio"></figure>
+      <figure class="w2"><img data-img="renders/interior-libreria" alt="Interior: librería"></figure>
+      <figure class="w2 m-half"><img data-img="renders/gastronomia-exterior" alt="Gastronomía"></figure>
+      <figure class="w2 m-half"><img data-img="renders/interior-oficina" alt="Interior: oficina"></figure>
+      <figure class="w2"><img data-img="renders/ext-3" alt="Paseo comercial"></figure>
+      <figure class="w3"><img data-img="renders/aerea-conjunto" alt="Vista aérea"></figure>
+      <figure class="w3"><img data-img="renders/ext-2" alt="Vista desde la avenida"></figure>
+    </div>
+    <p class="note"><span class="l-es">Imágenes ilustrativas, no contractuales.</span><span class="l-en">Illustrative images, non-binding.</span></p>
+  </div>
+</section>
+
+<!-- ================= UBICACIÓN ================= -->
+<section class="sec alt" id="ubicacion">
+  <div class="wrap">
+    <div class="loc-grid">
+      <div class="rv">
+        <span class="eyebrow"><span class="l-es">Ubicación</span><span class="l-en">Location</span></span>
+        <h2 class="h-sec" style="margin:14px 0 20px"><span class="l-es"><span class="thin">En el corazón</span><span class="bold">de Vaca Muerta</span></span><span class="l-en"><span class="thin">In the heart</span><span class="bold">of Vaca Muerta</span></span></h2>
+        <p class="txt"><span class="l-es">Núcleo del casco urbano de Añelo, dentro del plan de ordenamiento territorial del sector central de la ciudad, con acceso directo y estacionamiento.</span><span class="l-en">At the core of Añelo's urban area, within the city's central land-use plan, with direct access and parking.</span></p>
+        <ul class="loc-list">
+          <li>{{ico:pin}}<span><span class="l-es">Calle Los Loros, Los Gorriones, A° Domuyo y Los Cisnes · Añelo, Neuquén</span><span class="l-en">Los Loros, Los Gorriones, A° Domuyo &amp; Los Cisnes streets · Añelo, Neuquén</span></span></li>
+          <li>{{ico:car}}<span><span class="l-es">Estacionamiento propio</span><span class="l-en">On-site parking</span></span></li>
+          <li>{{ico:arrow}}<span><span class="l-es">Conexión con el Parque Industrial Vaca Muerta</span><span class="l-en">Linked to Parque Industrial Vaca Muerta</span></span></li>
+        </ul>
+        <div class="btns" style="margin-top:26px"><a class="btn btn-ghost" id="gmaps" target="_blank" rel="noopener">{{ico:pin}}<span class="l-es">Cómo llegar</span><span class="l-en">Get directions</span></a></div>
+        <figure class="loc-aerial" data-lb-single><img data-img="renders/ubicacion-aerea" alt="Vista aérea: Añelo Plaza Shopping y Parque Industrial Vaca Muerta"></figure>
+      </div>
+      <div id="map" class="rv" role="region" aria-label="Mapa"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BROCHURE ================= -->
+<section class="sec dark" id="brochure">
+  <div class="wrap">
+    <div class="bro">
+      <div class="rv">
+        <span class="eyebrow"><span class="l-es">Brochure comercial 2026</span><span class="l-en">2026 sales brochure</span></span>
+        <h2 class="h-sec" style="margin:14px 0 20px"><span class="l-es"><span class="thin">Todo el proyecto</span><span class="bold">en un documento</span></span><span class="l-en"><span class="thin">The whole project</span><span class="bold">in one document</span></span></h2>
+        <p class="txt"><span class="l-es">Concepto, contexto, rubros, servicios, planos por lote y condiciones comerciales.</span><span class="l-en">Concept, context, categories, services, floor plans by lot and commercial terms (Spanish).</span></p>
+        <div class="btns" style="margin-top:28px">
+          <a class="btn btn-light" id="broDl" download="Anelo_Plaza_Shopping_Comercial_2026.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span class="l-es">Descargar PDF</span><span class="l-en">Download PDF</span></a>
+          <a class="btn btn-ghost on-dark" id="broView" target="_blank" rel="noopener"><span class="l-es">Ver online</span><span class="l-en">View online</span></a>
+        </div>
+        <div class="bro-meta"><span>PDF · 17 <span class="l-es">páginas</span><span class="l-en">pages</span></span><span>{{bro_size}}</span></div>
+      </div>
+      <div class="bro-cover rv"><img data-img="brochure/portada" alt="Portada del brochure comercial 2026"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="sec glow-bg" id="contacto">
+  <div class="wrap">
+    <div class="ct-grid">
+      <div class="rv">
+        <span class="eyebrow"><span class="l-es">Contacto comercial</span><span class="l-en">Sales contact</span></span>
+        <h2 class="h-sec" style="margin:14px 0 20px"><span class="l-es"><span class="thin">Sumá tu marca</span><span class="bold">a Añelo Plaza</span></span><span class="l-en"><span class="thin">Bring your brand</span><span class="bold">to Añelo Plaza</span></span></h2>
+        <p class="txt"><span class="l-es">Reservá tu local en la etapa de comercialización inicial. Te contactamos para compartirte disponibilidad, superficies y condiciones.</span><span class="l-en">Reserve your unit during the initial sales stage. We'll get back to you with availability, areas and terms.</span></p>
+        <ul class="ct-list" id="ctList"></ul>
+      </div>
+      <form class="ct rv" id="ctForm" novalidate>
+        <div class="fld"><label for="fNom"><span class="l-es">Nombre *</span><span class="l-en">Name *</span></label><input id="fNom" name="nombre" required autocomplete="name"></div>
+        <div class="fld"><label for="fTel"><span class="l-es">Teléfono *</span><span class="l-en">Phone *</span></label><input id="fTel" name="telefono" required type="tel" autocomplete="tel"></div>
+        <div class="fld"><label for="fMail">Email *</label><input id="fMail" name="email" required type="email" autocomplete="email"></div>
+        <div class="fld"><label for="fEmp"><span class="l-es">Empresa / rubro</span><span class="l-en">Company / category</span></label><input id="fEmp" name="empresa" autocomplete="organization"></div>
+        <div class="fld"><label for="fInt"><span class="l-es">Me interesa</span><span class="l-en">I'm interested in</span></label>
+          <select id="fInt" name="interes"><option value="alquilar" data-es="Alquilar un local" data-en="Leasing a unit">Alquilar un local</option><option value="comprar" data-es="Comprar un local" data-en="Buying a unit">Comprar un local</option><option value="info" data-es="Recibir información" data-en="Receiving information">Recibir información</option></select></div>
+        <div class="fld"><label for="fLoc"><span class="l-es">Local de interés</span><span class="l-en">Unit of interest</span></label><input id="fLoc" name="local" placeholder="Ej. L3-05"></div>
+        <div class="fld full"><label for="fMsg"><span class="l-es">Mensaje</span><span class="l-en">Message</span></label><textarea id="fMsg" name="mensaje"></textarea></div>
+        <div class="f-actions">
+          <button class="btn btn-solid" type="submit">{{ico:wa}}<span class="l-es">Enviar por WhatsApp</span><span class="l-en">Send via WhatsApp</span></button>
+          <button class="btn btn-ghost" type="button" id="ctMail"><span class="l-es">Enviar por email</span><span class="l-en">Send via email</span></button>
+          <span class="f-msg" id="fMsgOut" aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="flogo">{{logo:op3:3:}}</div>
+        <div class="fcred">
+          <div><small><span class="l-es">Desarrolla y administra</span><span class="l-en">Developed &amp; managed by</span></small><img src="{{img:logos/zlt.png}}" alt="ZLT"></div>
+          <div><small><span class="l-es">Construye</span><span class="l-en">Built by</span></small><img src="{{img:logos/roque-mocciola.png}}" alt="Roque Mocciola"></div>
+        </div>
+      </div>
+      <nav aria-label="Pie">
+        <h5><span class="l-es">Sitio</span><span class="l-en">Site</span></h5>
+        <a href="#proyecto"><span class="l-es">El proyecto</span><span class="l-en">The project</span></a>
+        <a href="#locales"><span class="l-es">Locales y tipologías</span><span class="l-en">Units &amp; types</span></a>
+        <a href="#obra"><span class="l-es">Avance de obra</span><span class="l-en">Construction progress</span></a>
+        <a href="#ubicacion"><span class="l-es">Ubicación</span><span class="l-en">Location</span></a>
+        <a href="#brochure">Brochure</a>
+      </nav>
+      <div class="fl">
+        <h5><span class="l-es">Contacto</span><span class="l-en">Contact</span></h5>
+        <div id="ftList"></div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Añelo Plaza Shopping · <span class="l-es">Un desarrollo de</span><span class="l-en">A development by</span> ZLT</span>
+      <span><span class="l-es">Imágenes, planos y superficies ilustrativos y sujetos a modificaciones.</span><span class="l-en">Images, plans and areas are illustrative and subject to change.</span></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp">{{ico:wa}}</a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+  <img id="lbImg" alt="">
+  <button class="lb-x" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-p" type="button" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <button class="lb-n" type="button" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="lb-c" id="lbC"></div>
+</div>
+
+<script id="site-data" type="application/json">{{site}}</script>
+<script id="img-db" type="application/json">{{imgdb}}</script>
+<script id="bro-b64" type="text/plain">{{brochure}}</script>
+<script>{{leaflet_js}}</script>
+<script>{{js}}</script>
+</body>
+</html>
