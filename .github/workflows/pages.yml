@@ -1,0 +1,51 @@
+# Publica la web de Añelo Plaza Shopping en GitHub Pages cada vez que se sube algo a main.
+#
+# Arma una copia del sitio en _site/:
+#   /index.html  ← html/index.html (generado con build.py, autocontenido)
+#   /robots.txt  ← bloquea todo: sigue en noindex hasta el lanzamiento
+# Los archivos originales no se tocan.
+
+name: Publicar en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Armar el sitio
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp html/index.html _site/index.html
+          grep -q 'name="robots" content="noindex' _site/index.html || { echo "html/index.html no esta en noindex"; exit 1; }
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+          touch _site/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
