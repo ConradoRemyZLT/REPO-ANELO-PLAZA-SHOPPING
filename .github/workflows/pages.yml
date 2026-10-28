@@ -3,8 +3,8 @@
 # Arma una copia del sitio en _site/:
 #   /index.html  ← html/index.html (generado con build.py, autocontenido)
 #   /robots.txt  ← bloquea todo: sigue en noindex hasta el lanzamiento
-# Login: el mismo gate.js de REPO-WEB-NODO y ZLT-WEB-V2 (mismos usuarios), insertado
-# justo después de </title>.
+# Login: el mismo gate.js de REPO-WEB-NODO y ZLT-WEB-V2 (mismos usuarios), que build.py
+# embebe inline justo después de </title>; el workflow solo verifica que esté.
 # Los archivos originales no se tocan.
 
 name: Publicar en GitHub Pages
@@ -36,12 +36,8 @@ jobs:
           cp html/index.html _site/index.html
           grep -q 'name="robots" content="noindex' _site/index.html || { echo "html/index.html no esta en noindex"; exit 1; }
           printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
-          # Login (gate.js, copia exacta del de REPO-WEB-NODO y ZLT-WEB-V2)
-          BASE="/${GITHUB_REPOSITORY#*/}"
-          cp gate.js _site/gate.js
-          f=_site/index.html
-          grep -q "src=\"$BASE/gate\.js\"" "$f" || sed -i "0,/<\/title>/s##</title><script src=\"$BASE/gate.js\"></script>#" "$f"
-          [ "$(grep -o "$BASE/gate\.js" "$f" | wc -l)" = 1 ] || { echo "El login no quedo una sola vez en $f"; exit 1; }
+          # Login: build.py ya embebe gate.js inline; acá solo se verifica que esté una sola vez
+          [ "$(grep -o 'zlt_gate_ok' _site/index.html | wc -l)" = 1 ] || { echo "html/index.html no tiene el login (o lo tiene repetido): correr build.py sin --sin-login"; exit 1; }
           touch _site/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3

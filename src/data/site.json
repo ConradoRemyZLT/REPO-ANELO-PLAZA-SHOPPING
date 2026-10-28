@@ -8,10 +8,11 @@
     "_nota": "Datos tomados del brochure comercial 2026. La web actual en Wix muestra info@somoszlt.com y +54 9 341 316 5100: confirmar cuáles quedan."
   },
   "ubicacion": {
-    "lat": -38.3536,
-    "lng": -68.7877,
-    "aproximada": true,
-    "_nota": "Coordenada APROXIMADA (centro urbano de Añelo). Reemplazar por la exacta del predio (Calle Los Loros / Los Gorriones / A° Domuyo / Los Cisnes)."
+    "lat": -38.35506,
+    "lng": -68.78979,
+    "zoom": 17,
+    "aproximada": false,
+    "_nota": "Centro del predio: Los Gorriones y Calle Los Loros (junto al canal de riego), entre los lotes 3-4 y 10-11. Medido sobre la imagen satelital del sitio; precisión estimada ±20 m. Si ZLT tiene la coordenada de catastro, reemplazarla acá."
   },
   "links": {
     "video_oficial_youtube_id": "",

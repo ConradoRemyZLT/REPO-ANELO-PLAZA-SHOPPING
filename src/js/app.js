@@ -264,10 +264,16 @@
   bindLB($('#obraGrid'), 'figure');
 
   /* ---------- Mapa (Leaflet embebido · Esri con fallback OSM) ---------- */
+  var mapEl = $('#map');
   function initMap() {
     if (!window.L) return;
     var U = D.ubicacion, ll = [U.lat, U.lng];
-    var map = L.map('map', { scrollWheelZoom: false, zoomControl: true, attributionControl: true }).setView(ll, 16);
+    var Z = U.zoom || 17;
+    var map = L.map('map', { scrollWheelZoom: false, zoomControl: true, attributionControl: true }).setView(ll, Z);
+    // Si el contenedor cambia de tamaño (login, layout, rotación), Leaflet debe recalcular y volver a centrar el pin
+    var recenter = function () { map.invalidateSize({ pan: false }); map.setView(ll, map.getZoom(), { animate: false }); };
+    if ('ResizeObserver' in window) { var rz = 0; new ResizeObserver(function () { if (rz++) recenter(); }).observe(mapEl); }
+    setTimeout(recenter, 250);
     var esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Tiles © Esri' });
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' });
     var errs = 0; esri.on('tileerror', function () { if (++errs === 3) { map.removeLayer(esri); osm.addTo(map); } });
@@ -276,7 +282,6 @@
     L.marker(ll, { icon: pin }).addTo(map).bindPopup('<b>Añelo Plaza Shopping</b><br>Añelo, Neuquén' + (U.aproximada ? '<br><i>' + t('Ubicación aproximada', 'Approximate location') + '</i>' : ''));
     window.__apsMap = map;
   }
-  var mapEl = $('#map');
   if ('IntersectionObserver' in window) {
     var mo = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { initMap(); mo.disconnect(); } }, { rootMargin: '400px 0px' });
     mo.observe(mapEl);

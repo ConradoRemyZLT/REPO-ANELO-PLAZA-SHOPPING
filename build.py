@@ -3,6 +3,11 @@
 
     python3 build.py            -> html/index.html  (noindex: versión de desarrollo)
     python3 build.py --index    -> html/index.html  indexable (usar recién para el lanzamiento)
+    python3 build.py --sin-login -> sin pantalla de login (por defecto el HTML lleva gate.js)
+
+Login: gate.js es COPIA EXACTA del de ZLT-WEB-V2 (mismos usuarios que proyectos.somoszlt.com,
+PIVM, Lumina y Nodo). No modificarlo: si cambian los usuarios, copiarlo de nuevo desde REPO WEB ZLT V2.
+Es un login del lado del navegador: frena a quien entra por la URL, no a quien lea el repo.
 
 Fuentes editables:  src/index.html · src/css/styles.css · src/js/app.js · src/data/site.json
 Assets:             fotos/ · planos/ · logos/ · iconos/ · fonts/ · brochures/ · vendor/
@@ -15,6 +20,7 @@ from PIL import Image
 ROOT = os.path.dirname(os.path.abspath(__file__))
 P = lambda *a: os.path.join(ROOT, *a)
 INDEX = "--index" in sys.argv
+LOGIN = "--sin-login" not in sys.argv
 read = lambda p, m="r": open(P(p), m, **({} if "b" in m else {"encoding": "utf-8"})).read()
 
 def b64(data, mime): return "data:%s;base64,%s" % (mime, base64.b64encode(data).decode())
@@ -63,10 +69,18 @@ sprites.append('<div id="pinLeaf" hidden>%s</div>' % logo("sim", 3))
 
 ICO = {"bag": (0, 0), "phone": (1, 0), "wifi": (2, 0), "cal": (3, 0), "cam": (0, 1), "img": (1, 1), "pin": (2, 1), "tag": (3, 1),
        "clock": (0, 2), "stairs": (1, 2), "car": (2, 2), "wc": (3, 2), "chat": (0, 3), "info": (1, 3), "arrow": (2, 3), "exit": (3, 3)}
+ICO_BBOX = {"bag": (71, 65, 84, 85), "phone": (256, 71, 81, 82), "wifi": (426, 68, 119, 88), "cal": (620, 70, 84, 83),
+            "cam": (73, 246, 83, 68), "img": (255, 234, 83, 83), "pin": (447, 241, 71, 71), "tag": (614, 230, 98, 98),
+            "clock": (77, 427, 71, 71), "stairs": (251, 427, 95, 79), "car": (429, 407, 110, 111), "wc": (611, 414, 103, 95),
+            "chat": (68, 606, 83, 73), "info": (251, 596, 100, 100), "arrow": (436, 608, 95, 77), "exit": (618, 600, 94, 84)}
 def icon(name):
     if name == "wa": return '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>'
-    c, r = ICO[name]
-    return '<svg class="ico" viewBox="%d %d 112 112" aria-hidden="true"><use href="#ico-ui" width="768" height="768"/></svg>' % (c * 192 + 40, r * 192 + 40)
+    # viewBox cuadrado centrado en el contorno real de cada ícono (medido sobre Iconos.svg):
+    # ningún ícono queda cortado y todos se ven del mismo tamaño y centrados en su caja
+    x, y, w, h = ICO_BBOX[name]
+    side = max(w, h) * 1.08
+    return ('<svg class="ico" viewBox="%.1f %.1f %.1f %.1f" aria-hidden="true"><use href="#ico-ui" width="768" height="768"/></svg>'
+            % (x + w / 2 - side / 2, y + h / 2 - side / 2, side, side))
 
 # ---------------- Contenido generado ----------------
 site = json.loads(read("src/data/site.json"))
@@ -143,8 +157,15 @@ if missing: sys.exit("Tokens sin resolver: %s" % missing)
 refs = set(re.findall(r'data-img="([^"]+)"', html)); falt = refs - set(imgdb)
 if falt: sys.exit("Imágenes faltantes: %s" % falt)
 
+# Login: gate.js inline justo después de </title>, antes de que se pinte nada
+if LOGIN:
+    if not os.path.exists(P("gate.js")): sys.exit("Falta gate.js (login). Copiarlo de REPO WEB ZLT V2 o usar --sin-login")
+    gate = read("gate.js")
+    assert html.count("</title>") == 1
+    html = html.replace("</title>", "</title>\n<script>" + gate + "</script>", 1)
+
 os.makedirs(P("html"), exist_ok=True)
 open(P("html", "index.html"), "w", encoding="utf-8").write(html)
 mb = os.path.getsize(P("html", "index.html")) / 1048576
-print("html/index.html  %.1f MB  (%s)  · %d imágenes" % (mb, "indexable" if INDEX else "noindex", len(imgdb)))
+print("html/index.html  %.1f MB  (%s · %s)  · %d imágenes" % (mb, "indexable" if INDEX else "noindex", "con login" if LOGIN else "SIN login", len(imgdb)))
 if mb > 30: print("! Supera 30 MiB: bajar calidad WebP")

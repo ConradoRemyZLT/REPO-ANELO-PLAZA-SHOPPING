@@ -113,8 +113,10 @@ for i, name in enumerate(SERV):
     to_alpha(page(8).crop((cx - r, cy - r, cx + r, cy + r))).save(out("iconos", "servicios", name + ".png"))
 
 # ---------- Créditos (Roque Mocciola / ZLT) ----------
-to_alpha(page(17).crop((1150, 1275, 1480, 1385))).save(out("logos", "roque-mocciola.png"))
-to_alpha(page(17).crop((1585, 1262, 1790, 1400))).save(out("logos", "zlt.png"))
+# se recortan al contorno real (alfa) para que se alineen bien en la web
+for box, name in (((1150, 1275, 1480, 1385), "roque-mocciola"), ((1585, 1262, 1790, 1400), "zlt")):
+    im = to_alpha(page(17).crop(box)); im = im.crop(im.getchannel("A").point(lambda v: 255 if v > 24 else 0).getbbox())
+    im.save(out("logos", name + ".png"))
 
 # ---------- Logos APS: se quita el <rect> de fondo del artboard ----------
 LOGOS = {"OP1.svg/Logo_OP1.svg": "aps-logo", "OP2.svg/Logo_OP2.svg": "aps-logo-horizontal",

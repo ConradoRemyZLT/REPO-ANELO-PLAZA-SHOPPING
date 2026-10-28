@@ -7,7 +7,12 @@ El sitio nuevo de **Añelo Plaza Shopping** reemplaza la web actual en Wix. Toma
 ```bash
 python3 build.py            # genera html/index.html (noindex, versión de desarrollo)
 python3 build.py --index    # versión indexable: usar recién en el lanzamiento
+python3 build.py --sin-login  # sin pantalla de login
 ```
+
+## Login
+
+`gate.js` es **copia exacta** del de ZLT-WEB-V2, con los mismos usuarios que proyectos.somoszlt.com, PIVM, Lumina y Nodo. El build lo inserta inline después de `</title>`. No hay que modificarlo: si cambian los usuarios, se vuelve a copiar desde `REPO WEB ZLT V2/gate.js`. Es un login del lado del navegador: frena a quien entra por la URL, pero no a quien lea el repo o tenga el HTML.
 
 El resultado es **un único HTML autocontenido**, con fotos (WebP), fuentes, logos, Leaflet y el brochure PDF embebidos. Se publica tal cual, por ejemplo en GitHub Pages. Pesa unos 11,5 MB, por debajo del límite de 30 MiB.
 
@@ -36,6 +41,7 @@ Requiere Python 3.9+, Pillow (con WebP), numpy, scipy, pillow-heif (para los HEI
 | `vendor/` | Leaflet 1.9.4 (embebido inline: desde CDN falla) |
 | `html/` | **Salida** lista para publicar |
 | `tools/` | Script de preparación de assets |
+| `gate.js` | Login compartido con las demás webs de ZLT (no editar) |
 
 ## Tareas frecuentes
 
