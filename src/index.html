@@ -19,6 +19,12 @@
 </head>
 <body class="no-anim">
 {{sprites}}
+<!-- Pantalla de carga: isologotipo APS + avance real (ver app.js) -->
+<div id="pre" role="status" aria-live="polite">
+  <div class="pre-logo">{{logo:op3:1:}}</div>
+  <div class="pre-bar" aria-hidden="true"><i></i></div>
+  <span class="sr-only"><span class="l-es">Cargando…</span><span class="l-en">Loading…</span></span>
+</div>
 
 <!-- ================= BARRA ================= -->
 <header class="bar" id="bar">
@@ -58,7 +64,7 @@
 <!-- ================= HERO ================= -->
 <section class="hero" id="inicio">
   <div class="hero-media" id="heroMedia">
-    <img data-img="renders/aerea-conjunto" data-eager alt="Vista aérea de Añelo Plaza Shopping" class="on">
+    <img data-img="renders/aerea-conjunto" data-eager alt="Vista aérea de Añelo Plaza Shopping">
     <img data-img="renders/ext-5" alt="Fachada de Añelo Plaza Shopping al atardecer">
     <img data-img="renders/gastronomia-exterior" alt="Sector gastronómico con terraza">
     <img data-img="renders/ext-3" alt="Paseo comercial a cielo abierto">

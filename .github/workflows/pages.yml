@@ -37,7 +37,7 @@ jobs:
           grep -q 'name="robots" content="noindex' _site/index.html || { echo "html/index.html no esta en noindex"; exit 1; }
           printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
           # Login: build.py ya embebe gate.js inline; acá solo se verifica que esté una sola vez
-          [ "$(grep -o 'zlt_gate_ok' _site/index.html | wc -l)" = 1 ] || { echo "html/index.html no tiene el login (o lo tiene repetido): correr build.py sin --sin-login"; exit 1; }
+          [ "$(grep -o 'var KEY = "zlt_gate_ok"' _site/index.html | wc -l)" = 1 ] || { echo "html/index.html no tiene el login (o lo tiene repetido): correr build.py sin --sin-login"; exit 1; }
           touch _site/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3

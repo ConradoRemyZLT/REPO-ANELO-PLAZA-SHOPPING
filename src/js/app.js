@@ -40,6 +40,62 @@
   });
   $$('#drawer a').forEach(function (a) { a.addEventListener('click', function () { drawer.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }); });
 
+  /* ---------- Pantalla de carga (mismo patrón que PIVM) ----------
+     Fondo crema, isologotipo APS que "respira" y una línea con el avance real.
+     Se va cuando la página cargó (tipografías incluidas) y están decodificadas las imágenes
+     de la primera vista (encabezado + ficha del proyecto). Si pasan 25 s sin avance, se muestra igual.
+     Con login (gate.js) la carga arranca recién al ingresar, para que suceda detrás de esta pantalla. */
+  var PRE = { done: false, cbs: [] };
+  function onReady(f) { if (PRE.done) f(); else PRE.cbs.push(f); }
+  (function () {
+    html.classList.add('js-on');
+    var pre = document.getElementById('pre');
+    if (!pre) { PRE.done = true; return; }
+    html.classList.add('loading');
+    if (html.style.visibility === 'hidden') {
+      var iv = setInterval(function () {
+        var ok = false; try { ok = sessionStorage.getItem('zlt_gate_ok') === '1'; } catch (e) {}
+        if (ok) { clearInterval(iv); start(); }
+      }, 150);
+    } else start();
+    function start() {
+      var bar = pre.querySelector('.pre-bar i'), parts = {}, shown = 0, last = Date.now(), jobs = [];
+      function paint() {
+        var tw = 0, acc = 0, k;
+        for (k in parts) { tw += parts[k].w; acc += parts[k].w * parts[k].l; }
+        shown = Math.max(shown, tw ? acc / tw : 1);
+        if (bar) bar.style.width = (3 + shown * 97) + '%';
+      }
+      function put(k, l) { parts[k].l = l; last = Date.now(); paint(); }
+      // 1 · la página y las tipografías
+      parts.page = { l: 0, w: 2 };
+      jobs.push(new Promise(function (r) { if (document.readyState === 'complete') r(); else addEventListener('load', r); })
+        .then(function () { return document.fonts && document.fonts.ready ? document.fonts.ready.catch(function () {}) : null; })
+        .then(function () { put('page', 1); }));
+      // 2 · imágenes de la primera vista, decodificadas (no solo descargadas)
+      var first = $$('#heroMedia img').concat($$('#proyecto .gslide img').slice(0, 2));
+      first.forEach(function (img, i) {
+        var k = 'img' + i; parts[k] = { l: 0, w: 1 };
+        setImg(img);
+        var done = function () { put(k, 1); };
+        jobs.push((img.decode ? img.decode() : new Promise(function (r) { if (img.complete) r(); else img.onload = img.onerror = r; }))
+          .then(done, done));
+      });
+      paint();
+      function finish() {
+        if (PRE.done) return;
+        PRE.done = true; shown = 1; if (bar) bar.style.width = '100%';
+        setTimeout(function () {
+          document.body.classList.add('ready'); html.classList.remove('loading');
+          PRE.cbs.forEach(function (f) { f(); });
+          setTimeout(function () { pre.setAttribute('hidden', ''); }, 900);
+        }, 380);
+      }
+      Promise.all(jobs).then(finish, finish);
+      (function guard() { if (PRE.done) return; if (Date.now() - last > 25000) return finish(); setTimeout(guard, 1000); })();
+    }
+  })();
+
   /* ---------- Hero slideshow ---------- */
   var hs = $$('#heroMedia img'), hd = $('#heroDots'), hi = 0, ht;
   hs.forEach(function (_, i) {
@@ -51,7 +107,9 @@
     $$('button', hd).forEach(function (b, j) { b.classList.toggle('on', j === hi); });
     if (user) { clearInterval(ht); ht = setInterval(function () { heroGo(hi + 1); }, 6500); }
   }
-  hs.forEach(setImg); heroGo(0); ht = setInterval(function () { heroGo(hi + 1); }, 6500);
+  hs.forEach(setImg);
+  // el slideshow arranca cuando se va la pantalla de carga, así la primera imagen hace su zoom a la vista
+  onReady(function () { heroGo(0); ht = setInterval(function () { heroGo(hi + 1); }, 6500); });
 
   /* ---------- Lightbox ---------- */
   var lb = $('#lb'), lbImg = $('#lbImg'), lbC = $('#lbC'), lbList = [], lbI = 0;

@@ -43,6 +43,10 @@ Requiere Python 3.9+, Pillow (con WebP), numpy, scipy, pillow-heif (para los HEI
 | `tools/` | Script de preparación de assets |
 | `gate.js` | Login compartido con las demás webs de ZLT (no editar) |
 
+## Pantalla de carga
+
+Mismo patrón que la web del PIVM: fondo crema, isologotipo de APS que "respira" y una línea con el avance real. Se va cuando la página terminó de cargar (tipografías incluidas) y las imágenes de la primera vista están listas. Si pasan 25 s sin avance, la web se muestra igual. Con login, la carga arranca recién al ingresar, para que suceda detrás de esta pantalla y no detrás del login. El código está en `src/js/app.js` y los estilos en `#pre`, en `styles.css`.
+
 ## Tareas frecuentes
 
 - **Cambiar el estado de un local**: en `site.json → unidades`, el campo `estado` admite `consultar`, `disponible`, `reservado`, `vendido` o `alquilado`. Con `m2` se muestra la superficie.

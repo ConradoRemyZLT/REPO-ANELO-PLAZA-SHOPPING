@@ -387,3 +387,21 @@ form.ct{background:var(--white);border:1px solid var(--line-l);border-radius:var
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero-media img{transition:opacity .6s}html{scroll-behavior:auto}}
 .no-anim *,.no-anim *::before,.no-anim *::after{transition:none!important;animation:none!important}
+
+/* ---------- Pantalla de carga (patrón PIVM, marca APS) ---------- */
+#pre{position:fixed;inset:0;z-index:10000;background:var(--cream);color:var(--gray);display:grid;place-items:center;align-content:center;
+  gap:clamp(30px,4.5vh,44px);transition:opacity .8s var(--ease),visibility .8s;animation:preFailsafe .8s 45s forwards}
+#pre::before{content:"";position:absolute;width:70vmax;height:70vmax;right:-30vmax;top:-34vmax;border-radius:50%;
+  background:radial-gradient(closest-side,var(--glow),transparent);pointer-events:none}
+.js-on #pre{animation:none}
+#pre[hidden]{display:none}
+body.ready #pre{opacity:0;visibility:hidden}
+html.loading,html.loading body{overflow:hidden}
+#pre .pre-logo{position:relative;width:clamp(210px,24vw,320px);transform-origin:50% 55%;animation:preBreath 3.4s cubic-bezier(.45,0,.55,1) infinite}
+#pre .pre-logo svg{display:block;width:100%;height:auto}
+#pre .pre-bar{position:relative;width:min(240px,56vw);height:2px;border-radius:2px;background:rgba(96,96,96,.16);overflow:hidden}
+#pre .pre-bar i{display:block;height:100%;width:3%;background:var(--gray);border-radius:2px;transition:width .45s cubic-bezier(.22,1,.36,1)}
+/* suspiro: inhala lento, sostiene, exhala */
+@keyframes preBreath{0%{transform:scale(.97);opacity:.82}42%{transform:scale(1.035);opacity:1}55%{transform:scale(1.035);opacity:1}100%{transform:scale(.97);opacity:.82}}
+@keyframes preFailsafe{to{opacity:0;visibility:hidden}}
+@media (prefers-reduced-motion:reduce){#pre .pre-logo{animation:none}}
